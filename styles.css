@@ -757,9 +757,19 @@ h2.section-title {
   color: var(--ink);
   opacity: 0.7;
   text-transform: uppercase;
+  margin-right: auto;
+}
+
+.lightbox-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  opacity: 0.5;
+  flex-shrink: 0;
 }
 
 .lightbox-stage {
+  position: relative;
   flex: 1;
   overflow: auto;
   background: var(--paper-dim);
@@ -792,6 +802,35 @@ h2.section-title {
   cursor: zoom-out;
 }
 
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lightbox-prev { left: 12px; }
+.lightbox-next { right: 12px; }
+
+.lightbox-nav:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.lightbox-nav[hidden] {
+  display: none;
+}
+
 .lightbox-hint {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -804,6 +843,11 @@ h2.section-title {
 @media (max-width:600px) {
   .lightbox-stage.zoomed img {
     width: 260%;
+  }
+  .lightbox-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
   }
 }
 

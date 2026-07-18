@@ -17,7 +17,7 @@
 
   <nav>
     <div class="wrap nav-bar">
-      <div class="nav-mark">JJ Mintar <span>/ PORTFOLIO — REV. 01</span></div>
+      <div class="nav-mark">JJPM <span>/ PORTFOLIO — REV. 01</span></div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#work">Certificate</a></li>
@@ -127,7 +127,7 @@
           <p>Cisco Networking Academy. For completing the course and passing the exam.</p>
           <div class="work-tags"><span>Syntax</span><span>Function</span><span>DOM</span><span>Loops &
               Array</span><span>Conditional Statement</span><span>Debugging</span><span>User Interaction</span></div>
-          <a href="#" class="work-link" data-cert-img="assets/CareerCert/" data-cert-title="Javascript Essentials">View
+          <a href="#" class="work-link" data-cert-img="assets/CareerCert/javascript-essentials-1-cert-img.jfif" data-cert-title="Javascript Essentials">View
             credential →</a>
         </div>
         <div class="work-card">
@@ -229,8 +229,9 @@
                 <td>Javascript Essentials</td>
                 <td>Cisco Network Academy</td>
                 <td>2026</td>
-                <td><a href="#" class="index-link" data-cert-img="assets/CareerCert/javascript-essential-cert.jfif"
-                    data-cert-title="Javascript Essentials">View →</a></td>
+                <td>
+                  <a href="#" class="index-link" data-cert-img="assets/CareerCert/javascript-essentials-1-cert-img.jfif"
+                    data-cert-title="Javascript Essentials">View →</a>
               </tr>
               <tr>
                 <td>09</td>
@@ -367,12 +368,15 @@
     <div class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
       <div class="lightbox-header">
         <span id="lightboxTitle" class="lightbox-title"></span>
+        <span id="lightboxCount" class="lightbox-count"></span>
         <button type="button" class="modal-close" id="closeLightbox" aria-label="Close">✕</button>
       </div>
       <div class="lightbox-stage" id="lightboxStage">
+        <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
         <img id="lightboxImg" src="" alt="">
+        <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
       </div>
-      <p class="lightbox-hint">Click the image to zoom in / out</p>
+      <p class="lightbox-hint">Click the image to zoom in / out · use the arrows for more images</p>
     </div>
   </div>
 

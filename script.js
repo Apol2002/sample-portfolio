@@ -70,22 +70,59 @@ function unlockScroll(){
     });
   })();
 
-  // Certificate lightbox — opens a zoomed view when a "View credential" / "View" link is clicked
+  // Certificate lightbox — opens a zoomed view when a "View credential" / "View" link is clicked.
+  // Supports multiple images per credential: data-cert-img can hold one path, or several
+  // separated by commas (e.g. "cert-1.jpg,cert-2.jpg"), and the lightbox adds prev/next
+  // arrows plus a counter automatically whenever there's more than one image.
   (function(){
     var overlay = document.getElementById('lightboxOverlay');
     var stage = document.getElementById('lightboxStage');
     var img = document.getElementById('lightboxImg');
     var titleEl = document.getElementById('lightboxTitle');
+    var countEl = document.getElementById('lightboxCount');
+    var prevBtn = document.getElementById('lightboxPrev');
+    var nextBtn = document.getElementById('lightboxNext');
     var closeBtn = document.getElementById('closeLightbox');
     var triggers = document.querySelectorAll('.work-link[data-cert-img], .index-link[data-cert-img]');
     var lastFocused = null;
+    var currentImages = [];
+    var currentIndex = 0;
 
-    function openLightbox(src, title){
+    function renderImage(){
+      img.src = currentImages[currentIndex];
+      stage.classList.remove('zoomed');
+      stage.scrollTop = 0;
+      stage.scrollLeft = 0;
+
+      var multiple = currentImages.length > 1;
+      prevBtn.hidden = !multiple;
+      nextBtn.hidden = !multiple;
+      countEl.textContent = multiple ? (currentIndex + 1) + ' / ' + currentImages.length : '';
+    }
+
+    function showPrev(){
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      renderImage();
+    }
+    function showNext(){
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      renderImage();
+    }
+
+    // Reads a data-cert-img value that may hold one path, or several separated by commas
+    function parseImages(value){
+      return value.split(',')
+        .map(function(src){ return src.trim(); })
+        .filter(Boolean);
+    }
+
+    function openLightbox(imgAttr, title){
       lastFocused = document.activeElement;
-      img.src = src;
+      currentImages = parseImages(imgAttr);
+      currentIndex = 0;
       img.alt = title || 'Certificate';
       titleEl.textContent = title || '';
-      stage.classList.remove('zoomed');
+      renderImage();
       overlay.hidden = false;
       lockScroll();
       closeBtn.focus();
@@ -100,6 +137,8 @@ function unlockScroll(){
     }
     function onKeydown(e){
       if(e.key === 'Escape'){ closeLightbox(); }
+      if(e.key === 'ArrowLeft' && currentImages.length > 1){ showPrev(); }
+      if(e.key === 'ArrowRight' && currentImages.length > 1){ showNext(); }
     }
 
     triggers.forEach(function(link){
@@ -110,6 +149,8 @@ function unlockScroll(){
     });
 
     closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
     overlay.addEventListener('click', function(e){
       if(e.target === overlay){ closeLightbox(); }
     });
