@@ -470,6 +470,13 @@ h2.section-title {
   padding: 6px 12px;
   border: 1px solid var(--ink);
   letter-spacing: 0.03em;
+  background-color: transparent;
+  transition: background-color 0.1s linear;
+}
+
+.tag:hover {
+  background-color: rgba(30, 25, 25, 0.097);
+  cursor: default;
 }
 
 /* ---------- Work ---------- */
@@ -593,6 +600,7 @@ h2.section-title {
   opacity: 0.55;
 }
 
+/* Certificate Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -669,7 +677,7 @@ h2.section-title {
   font-size: 11px;
   letter-spacing: 0.08em;
   color: var(--ink);
-  opacity: 0.55;
+  opacity: 1;
   font-weight: 500;
   padding: 12px 10px;
   border-bottom: 1px solid var(--ink);
@@ -819,8 +827,13 @@ h2.section-title {
   transition: background 0.15s ease, color 0.15s ease;
 }
 
-.lightbox-prev { left: 12px; }
-.lightbox-next { right: 12px; }
+.lightbox-prev {
+  left: 12px;
+}
+
+.lightbox-next {
+  right: 12px;
+}
 
 .lightbox-nav:hover {
   background: var(--ink);
@@ -844,6 +857,7 @@ h2.section-title {
   .lightbox-stage.zoomed img {
     width: 260%;
   }
+
   .lightbox-nav {
     width: 36px;
     height: 36px;
