@@ -315,6 +315,13 @@ header.hero {
   max-width: 15ch;
 }
 
+.hero h1 span {
+  display: block;
+  font-size: clamp(24px, 5vw, 90px);
+  font-weight: 400;
+  margin-top: 12px;
+}
+
 .hero h1 em {
   font-style: italic;
   font-weight: 450;
