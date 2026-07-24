@@ -428,6 +428,7 @@ h2.section-title {
   width: 100%;
   height: 100%;
   opacity: 0.85;
+  object-fit: cover;
 }
 
 .spec-rows {
@@ -444,7 +445,7 @@ h2.section-title {
 
 .spec-rows span:first-child {
   color: var(--ink);
-  opacity: 0.55;
+  opacity: 0.7;
 }
 
 .spec-rows div span:last-child {
@@ -489,7 +490,7 @@ h2.section-title {
   cursor: default;
 }
 
-/* ---------- Work ---------- */
+/* ---------- Certificate ---------- */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -612,7 +613,7 @@ h2.section-title {
   opacity: 0.55;
 }
 
-/* Certificate Modal */
+/* ---------- Certificate Modal ---------- */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -665,8 +666,8 @@ h2.section-title {
   color: var(--ink);
   flex-shrink: 0;
   transition:
-    background 0.15s ease,
-    color 0.15s ease;
+    background 0.12s ease,
+    color 0.12s ease;
 }
 
 .modal-close:hover {
@@ -691,7 +692,6 @@ h2.section-title {
   font-size: 11px;
   letter-spacing: 0.08em;
   color: var(--ink);
-  opacity: 1;
   font-weight: 500;
   padding: 12px 10px;
   border-bottom: 1px solid var(--ink);
@@ -718,14 +718,6 @@ h2.section-title {
 .index-link:hover {
   color: var(--signal);
   border-color: var(--signal);
-}
-
-.modal-hint {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--ink);
-  opacity: 0.5;
-  margin-top: 20px;
 }
 
 @media (max-width: 600px) {
