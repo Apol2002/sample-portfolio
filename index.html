@@ -310,6 +310,30 @@
     </div>
   </section>
 
+    <!-- Certificate Lightbox -->
+  <div class="lightbox-overlay" id="lightboxOverlay" hidden>
+    <div class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+      <div class="lightbox-header">
+        <span id="lightboxTitle" class="lightbox-title"></span>
+        <span id="lightboxCount" class="lightbox-count"></span>
+        <button type="button" class="modal-close" id="closeLightbox" aria-label="Close">
+          ✕
+        </button>
+      </div>
+      <div class="lightbox-stage" id="lightboxStage">
+        <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+          ‹
+        </button>
+        <img id="lightboxImg" src="" alt="" />
+        <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+          ›
+        </button>
+      </div>
+      <p class="lightbox-hint">Click or tap the image to zoom in / out</p>
+    </div>
+  </div>
+
+  <!-- Skill Section -->
   <section id="skills">
     <div class="wrap">
       <div class="eyebrow">Skills</div>
@@ -423,6 +447,7 @@
       </div>
     </div>
 
+    <!-- Footer Section -->
     <div class="wrap">
       <footer>
         <span>© 2026 John Joseph Mintar. All rights reserved.</span>
@@ -443,28 +468,6 @@
     <span class="corner-mark bl"></span>
     <span class="corner-mark br"></span>
   </section>
-
-  <div class="lightbox-overlay" id="lightboxOverlay" hidden>
-    <div class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
-      <div class="lightbox-header">
-        <span id="lightboxTitle" class="lightbox-title"></span>
-        <span id="lightboxCount" class="lightbox-count"></span>
-        <button type="button" class="modal-close" id="closeLightbox" aria-label="Close">
-          ✕
-        </button>
-      </div>
-      <div class="lightbox-stage" id="lightboxStage">
-        <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
-          ‹
-        </button>
-        <img id="lightboxImg" src="" alt="" />
-        <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
-          ›
-        </button>
-      </div>
-      <p class="lightbox-hint">Click or tap the image to zoom in / out</p>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
